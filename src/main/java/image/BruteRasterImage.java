@@ -9,16 +9,6 @@ public class BruteRasterImage implements Image {
     int height;
     int width;
 
-    @Override
-    public int getWidth() {
-        return this.width;
-    }
-
-    @Override
-    public int getHeight() {
-        return this.height;
-    }
-
     public BruteRasterImage(Color color, int width, int height){
         setHeight(height);
         setWidth(width);
@@ -31,6 +21,24 @@ public class BruteRasterImage implements Image {
         setWidth(colors.length);
         createRepresentation();
         setPixelsColor(colors);
+    }
+
+    @Override
+    public int getWidth() {
+        return this.width;
+    }
+
+    @Override
+    public int getHeight() {
+        return this.height;
+    }
+
+    protected void setWidth(int width){
+        this.width=width;
+    }
+
+    protected void setHeight(int height){
+        this.height=height;
     }
 
     public void createRepresentation(){
@@ -59,13 +67,5 @@ public class BruteRasterImage implements Image {
                 pixels[i][j] = color;
             }
         }
-    }
-
-    protected void setWidth(int width){
-        this.width=width;
-    }
-
-    protected void setHeight(int height){
-        this.height=height;
     }
 }
