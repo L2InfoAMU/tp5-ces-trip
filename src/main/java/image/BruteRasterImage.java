@@ -7,20 +7,21 @@ package image;
 public class BruteRasterImage implements Image {
 
     public Color[][] pixels;
+    int height;
+    int width;
 
     @Override
     public int getWidth() {
-        return pixels.length;
+        return this.width;
     }
 
     @Override
     public int getHeight() {
-        return pixels[0].length;
+        return this.height;
     }
 
     public BruteRasterImage(Color color, int width, int height){
-        this.pixels=new Color[width][height];
-
+        createRepresentation();
         for(int largeur=0;largeur<width;largeur++){
 
             for(int longeur=0;longeur<height;longeur++){
@@ -35,7 +36,7 @@ public class BruteRasterImage implements Image {
     }
 
     public void createRepresentation(){
-
+        this.pixels=new Color[this.width][this.height];
     }
 
     public void setPixelColor(Color color, int x, int y){
@@ -55,13 +56,10 @@ public class BruteRasterImage implements Image {
     }
 
     protected void setWidth(int width){
-        pixels=Arrays.copyOf(pixels,width);
+        this.width=width;
     }
 
     protected void setHeight(int height){
-        for(int width=0;width<getHeight();width++) {
-            pixels[width] = Arrays.copyOf(pixels[width], height);
-        }
-
+        this.height=height;
     }
 }
