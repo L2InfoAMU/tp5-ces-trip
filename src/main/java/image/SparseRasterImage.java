@@ -19,7 +19,13 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     public Color getPixelColor(int x, int y)
 
-    private void setPixelsColor(Color[][] pixels)
+    private void setPixelsColor(Color[][] pixels){
 
-    private void setPixelsColor(Color color)
+    }
+
+    private void setPixelsColor(Color color){
+        for(Point point : hash.keySet()) {
+            hash.put(point, color);
+        }
+    }
 }
