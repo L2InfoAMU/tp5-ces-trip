@@ -2,7 +2,11 @@ package image;
 
 import javafx.scene.paint.Color;
 
+import java.util.HashMap;
+
 public class SparseRasterImage extends RasterImage implements Image {
+
+    HashMap<Point,Color> hash;
 
     public SparseRasterImage(Color color, int width, int height){
 
