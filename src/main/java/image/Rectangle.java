@@ -14,12 +14,15 @@ public class Rectangle implements Shape {
         this.color = color;
     }
 
-
-    public boolean contains(Point point){
-    return point.x<width-this.x && point.y<height-this.y;
+    public boolean contains(Point point) {
+        return point.x<=height+this.x &&
+                point.y<=width+this.y &&
+                point.x>=this.x &&
+                point.y>=this.y;
     }
 
     public Color getColor(){
         return this.color;
     }
+
 }
