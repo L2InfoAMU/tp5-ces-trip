@@ -22,7 +22,6 @@ public class PaletteRasterImage extends RasterImage implements Image{
         if(!palette.contains(color))
             palette.add(color);
         indexesOfColors[x][y]=palette.indexOf(color);
-
     }
 
 
