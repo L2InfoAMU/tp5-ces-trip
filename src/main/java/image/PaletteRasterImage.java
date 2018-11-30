@@ -46,7 +46,6 @@ public class PaletteRasterImage implements Image{
         }
     }
 
-
     public void createRepresentation(){
         this.palette = new ArrayList<Color>();
         this.indexesOfColors = new int[this.width][this.height];
