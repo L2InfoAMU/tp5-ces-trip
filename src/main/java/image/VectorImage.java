@@ -2,28 +2,25 @@ package image;
 
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class VectorImage implements Image {
+public class VectorImage extends RasterImage implements Image {
 
     public List<Shape> shapes;
+    public int height, width;
 
-    VectorImage(List<Shape> shapes, int width, int height) {
-
+    public VectorImage(List<Shape> shapes, int height, int width) {
+        this.shapes = new ArrayList<>();
+        this.height = height;
+        this.width = width;
     }
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return null;
-    }
-
-    @Override
-    public int getWidth() {
-        return 0;
-    }
-
-    @Override
-    public int getHeight() {
-        return 0;
+        if (!shapes.contains(new Point(x,y))) {
+            return Color.WHITE;
+        }
+        return shapes.get(shapes.indexOf(new Point(x,y))).getColor();
     }
 }
