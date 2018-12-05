@@ -9,15 +9,14 @@ import java.util.List;
 public class VectorImage extends RasterImage implements Image {
 
     public List<Shape> shapes;
-    public int height, width;
 
-    public VectorImage(List<Shape> shapes, int height, int width) {
+    public VectorImage(List<Shape> shapes, int width, int height) {
         this.shapes=new ArrayList<>();
         for (Shape s : shapes) {
             this.shapes.add(s);
         }
-        this.height = height;
         this.width = width;
+        this.height = height;
     }
 
     @Override

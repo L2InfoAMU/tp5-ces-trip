@@ -15,8 +15,8 @@ public class Rectangle implements Shape {
     }
 
     public boolean contains(Point point) {
-        return point.x<=height+this.x &&
-                point.y<=width+this.y &&
+        return point.y<=height+this.y &&
+                point.x<=width+this.x &&
                 point.x>=this.x &&
                 point.y>=this.y;
     }
